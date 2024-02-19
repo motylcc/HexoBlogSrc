@@ -36,7 +36,7 @@ tags: [Github, Hexo]
 
 ## 二 异地更新博客
 
-1. 确保当前计算机已经安装[Git](https://git-scm.com/download/win)和[Node.js](https://nodejs.org/en/) （新版的Node.js已经集成了npm）
+1. 确保当前计算机已经安装[Git](https://git-scm.com/download/win)和[Node.js](https://nodejs.org/en/) （新版的Node.js已经集成了npm）。
 
    ```
    // 查看所需软件的版本信息
@@ -45,9 +45,24 @@ tags: [Github, Hexo]
    npm -v
    ```
 
-2. 配置ssh-key
+2. 配置ssh-key。
 
-3. 确保当前计算机已经安装安装Hexo
+3. 配置全局用户名和邮箱：
+
+   用户在GitHub中提交修改时会记录用户名和邮箱，Github通过本地配置的邮箱地址和用户名统计GitHub账户的贡献度（小绿块）。
+
+   ```
+   // 查看当前的Git配置信息
+   git config --list   // 查看git配置信息
+   git config user.name   // 查看用户名
+   git config user.email   // 查看邮箱
+   
+   // 配置全局用户名和邮箱
+   git config --global user.name "motylcc"   // 设置全局用户名（github用户名）
+   git config --global user.email  "jxzhangms@hotmail.com"   // 设置全局邮箱（github注册邮箱）
+   ```
+
+4. 确保当前计算机已经安装安装Hexo。
 
    ```
    hexo -v   // 查看本地是否已经安装Hexo
@@ -59,7 +74,7 @@ tags: [Github, Hexo]
    npm install hexo-generator-sitemap --save   // 为了建立站点地图
    ```
 
-4. 拉取Github上的hexo源文件（确保最新版本）
+5. 拉取Github上的hexo源文件（确保最新版本）：
 
    1. 新建一个文件夹，通过Git拉取hexo源文件。
 
@@ -72,11 +87,11 @@ tags: [Github, Hexo]
       git reset --hard origin/master
       ```
 
-5. 编写新的文章（hexo new）
+6. 编写新的文章（hexo new）。
 
-6. 推送新文章（hexo deploy）
+7. 推送新文章（hexo deploy）。
 
-7. 备份新的Hexo源文件到Github
+8. 备份新的Hexo源文件到Github：
 
    1. 进入当前的hexo文件夹，删除”.deploy_git”文件夹
 
